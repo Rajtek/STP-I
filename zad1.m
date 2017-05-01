@@ -1,8 +1,11 @@
-H=tf([0.5,3.5,5.625],[1,8,-36,-288]);
-[l,m]=c2d(H,0.1);
-l
+C=tf([0.5,3.5,5.625],[1,8,-36,-288]);
+[D,m]=c2d(C,0.1);
+D %wyswietlenie wyznaczonej transmitancji dyskretnej
 figure;
-pzmap(l)
+pzmap(C)%wykres zer i biegunow transmitancji ciaglej
+print('rys/rys1','-dpng','-r300');
 figure;
-pzmap(H)
-for 
+pzmap(D)%wykres zer i biegunow transmitancji dyskretnej
+print('rys/rys2','-dpng','-r300')
+[CB,CZ]=pzmap(C) %wyswietlenie zer i biegunow
+[DB,DZ]=pzmap(D)

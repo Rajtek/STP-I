@@ -1,0 +1,11 @@
+C=tf([0.5,3.5,5.625],[1,8,-36,-288]);
+[D,m]=c2d(C,0.1);
+D
+figure;
+print('BarPlot','-dpng')
+pzmap(D)
+figure;
+print('BarPlot','-dpng')
+pzmap(C)
+[CB,CZ]=pzmap(C)
+[DB,DZ]=pzmap(D)
