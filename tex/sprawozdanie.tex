@@ -85,12 +85,16 @@ $$
 G(z)=C(zI-A)^{-1}B+D
 $$
 W Matlabie służy do tego polecenie \verb+tf2ss+.
-Wariant drugi od pierwszego różni się tym, że w rezultacie otrzymujemy macierze transponowane.
+Wariant drugi możemy wyznaczyć z pierwszego.
+Wtedy
+$$
+A2=A^T, B2=C^T, C2=B^T, D2=D
+$$
 \subsection{Program}
 \lstinputlisting[caption={zad2.m}, label={lst:zad2}]{../zad2.m}
+\vbox{
 \subsection{Wyniki}
-\vbox{\begin{itemize}
-\item wariant pierwszy\\\\
+\subsubsection{Wariant pierwszy}
 \begin{tabular}{l}
 $
 A=\left[\begin{array}{ccc} 2.82 & -2.065 & 0.4493\\ 1 & 0 & 0\\ 0 & 1 & 0 \end{array}\right]
@@ -101,17 +105,34 @@ C=\left[\begin{array}{ccc} 0.05183 & -0.07375 & 0.0259 \end{array}\right],
 D=0
 $
 \end{tabular}
-\item wariant drugi\\\\
+\begin{figure}[H]
+\hspace*{-2cm}                                                        
+\includegraphics[width=16cm]{../rys/zad2_wariant1.pdf}
+\caption{Diagram wariant 1}
+\label{fig:diag1}
+\end{figure}
+}
+\vbox{
+\subsubsection{Wariant drugi}
 \begin{tabular}{l}
 $
 A=\left[\begin{array}{ccc} 2.82 & 1 & 0\\ -2.065 & 0 & 1\\ 0.4493 & 0 & 0 \end{array}\right]
 $\\\\
 $
-B=\left[\begin{array}{ccc} 1 & 0 & 0 \end{array}\right],
-C=\left[\begin{array}{c} 0.05183\\ -0.07375\\ 0.0259 \end{array}\right],
+B=\left[\begin{array}{c} 0.05183\\ -0.07375\\ 0.0259 \end{array}\right],
+C=\left[\begin{array}{ccc} 1 & 0 & 0 \end{array}\right],
 D=0
 $
 \end{tabular}
-\end{itemize}}
+
+\begin{figure}[H]
+\hspace*{-2cm}                                                           
+\includegraphics[width=16cm]{../rys/zad2_wariant2.pdf}
+\caption{Diagram wariant 2}
+\label{fig:diag2}
+\end{figure}
+}
+\newpage
+\subsection{Zadanie 3}
 
 \end{document}
