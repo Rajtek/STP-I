@@ -39,7 +39,7 @@ figure
     title('u(k)');
     grid;
     
-print(strcat('rys/zad3b_rys',num2str((i-1)*4+m)),'-dpdf','-r300');
+print(strcat('rys/zad3b_rys',num2str((i-1)*4+m)),'-dpdf');
 end;
 end;
 

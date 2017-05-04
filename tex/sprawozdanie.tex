@@ -356,4 +356,93 @@ a) wolny,\\
 b) szybki.\\
 Należy zamieścić przebiegi zmiennych stanu i sterowania otrzymane podczas
 eksperymentów dla obydwu przypadków.
+\subsection{Obserwator zredukowanego rzędu}
+\begin{figure}[H]
+\includegraphics[clip, trim=0.5cm 0cm 0.5cm 0cm, width=1.00\textwidth]{../rys/obserwator.pdf}
+\label{fig:zad4obs}
+\caption{Struktura dyskretnego obserwatora zredukowanego rzędu}
+\end{figure}
+\vspace{0.5cm}
+
+\subsection{Rozwiązanie}
+\subsubsection{Wzór}
+$$
+x(k)=\left[\begin{array}{c} x_1(k)\\ w(k) \end{array}\right]=\left[\begin{array}{c} y(k)\\ w(k) \end{array}\right]
+$$
+$$
+y(k)=x_1(k), w(k)=\left[\begin{array}{c} x_2(k)\\ x_3(k) \end{array}\right]
+$$
+$$
+z(k)=w(k)-Ly(k)
+$$
+$$
+z(k+1)=(A_{22}-LA_{12})(z(k)+Ly(k))+(A_{21}-LA{11})y(k)+(B_2-LB_1)u(k)
+$$
+
+Przyjmuję oznaczenia:
+$$
+A=\left[\begin{array}{ccc} a_{1} & 1 & 0\\ a_{2} & 0 & 1\\ a_{3} & 0 & 0 \end{array}\right]
+$$
+
+$$
+B=\left[\begin{array}{c} b_{1}\\ b_{2}\\ b_{3} \end{array}\right], L=\left[\begin{array}{c} l_{1}\\ l_{2} \end{array}\right]
+$$
+
+Na podstawie powyższych wzorów przy pomocy matlaba wyznaczyłem następujące równania:
+
+$$
+z(k)=\left[\begin{array}{c} x_{2}-l_{1}\,x_{1}\\ x_{3}-l_{2}\,x_{1} \end{array}\right]
+$$
+$$
+z(k+1)=\left[\begin{array}{c} x_{3}-l_{1}\,x_{2}+u\,\left(b_{2}-b_{1}\,l_{1}\right)+x_{1}\,\left(a_{2}-a_{1}\,l_{1}\right)\\ u\,\left(b_{3}-b_{1}\,l_{2}\right)-l_{2}\,x_{2}+x_{1}\,\left(a_{3}-a_{1}\,l_{2}\right) \end{array}\right]
+$$
+
+\subsubsection{Model obserwatora}
+\begin{figure}[H]
+\includegraphics[clip, trim=0cm 4cm 0cm 4cm, width=1.00\textwidth]{../rys/zad4_obserwator.pdf}
+\label{fig:zad4obs}
+\caption{Zrealizowany obserwator}
+\end{figure}
+\newpage
+\subsubsection{Struktura układu regulacji z obserwatorem}
+\begin{figure}[H]
+\includegraphics[clip, trim=9cm 7cm 9cm 7cm, width=1.00\textwidth]{../rys/zad4_regobs.pdf}
+\label{fig:zad4regobs}
+\caption{Struktura układu}
+\end{figure}
+\subsubsection{Wykresy}
+\begin{figure}[H]
+\includegraphics[clip, trim=2cm 10cm 2cm 9.5cm, width=1.00\textwidth]{../rys/zad4_rys1.pdf}
+\label{fig:rys4.1}
+\caption{4.1}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[clip, trim=2cm 10cm 2cm 9.5cm, width=1.00\textwidth]{../rys/zad4_rys2.pdf}
+\label{fig:rys4.2}
+\caption{4.2}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[clip, trim=2cm 10cm 2cm 9.5cm, width=1.00\textwidth]{../rys/zad4_rys3.pdf}
+\label{fig:rys4.3}
+\caption{4.3}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[clip, trim=2cm 10cm 2cm 9.5cm, width=1.00\textwidth]{../rys/zad4_rys4.pdf}
+\label{fig:rys4.4}
+\caption{4.4}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[clip, trim=2cm 10cm 2cm 9.5cm, width=1.00\textwidth]{../rys/zad4_rys5.pdf}
+\label{fig:rys4.5}
+\caption{4.5}
+\end{figure}
+\newpage
+\subsubsection{Wnioski}
+Z otrzymanych wykresów wynika, że przy doborze obserwatora należy tak dobrać bieguny, aby osiągnąć kompromis pomiędzy szybkością działania, a brakiem przeregulowań. Szybszy obserwator, czyli ten o biegunach bliższych zera, ma większe przeregulowania niż wolny.
+Zatem wybór położenia biegunów jest uwarunkowany tym co jest ważniejsze w danym projekcie.
+
 \end{document}
