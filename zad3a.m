@@ -13,15 +13,18 @@ z = Z(i);
 K=acker(A2, B2, [z z z]);
 sim('zad3_model', [0 kmax]);
 for l=1:length(x1.data)
+    kk
         %warunek koncowy
         if (x1.data(l)<0.001) && (x2.data(l)<0.001) && (x3.data(l)<0.001)
             kk=l;
             break;
         end
     end;
-    sim('zad3_model', [0 kk/10]);
+
 figure
+    
     subplot(2,1,1);
+    xlim([0 kk/10])
     hold on;
     stairs(x1.Time, x1.data);
     stairs(x2.Time, x2.data);
@@ -31,10 +34,11 @@ figure
     legend('x1','x2','x3');
     title(strcat('z=',num2str(z),', K=[',num2str(K(1)), ', ' , num2str(K(2)), ', ' ,num2str(K(3)),']'));
     subplot(2,1,2);
+    xlim([0 kk/10])
     stairs(u.Time, u.data);
     title('u(k)');
     grid;
     
-print(strcat('rys/zad3_rys',num2str(i)),'-dpdf','-r300');
+print(strcat('rys/zad3_rys',num2str(i)),'-dpdf');
 end;
 

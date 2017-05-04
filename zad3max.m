@@ -20,4 +20,4 @@ plot(Z,max_u);
 xlabel('z');
 ylabel('max \Delta u');
 grid;
-print('rys/zad3_max_u','-dpdf','-r300');
+print('rys/zad3_max_u','-dpdf');

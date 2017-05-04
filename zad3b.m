@@ -23,9 +23,9 @@ for l=1:length(x1.data)
             break;
         end
     end;
-    sim('zad3_model', [0 kk/10]);
 figure
     subplot(2,1,1);
+    xlim([0 kk/10])
     hold on;
     stairs(x1.Time, x1.data);
     stairs(x2.Time, x2.data);
@@ -35,9 +35,12 @@ figure
     legend('x1','x2','x3');
     title(strcat('z1=',num2str(z1),', z2=z3=',num2str(z2),', K=[',num2str(K(1)), ', ' , num2str(K(2)), ', ' ,num2str(K(3)),']'));
     subplot(2,1,2);
+    xlim([0 kk/10])
+    hold on;
     stairs(u.Time, u.data);
     title('u(k)');
     grid;
+    hold off;
     
 print(strcat('rys/zad3b_rys',num2str((i-1)*4+m)),'-dpdf');
 end;
